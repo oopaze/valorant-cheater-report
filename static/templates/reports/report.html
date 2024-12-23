@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Denuncia #{{ report.id }}</title>
+  <link rel="stylesheet" href="{% static 'css/pending-reports.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    {% include 'components/report.html' with report=report with_buttons=False %}
+
+    <button class="btn" onclick="window.history.back()">Voltar</button>
+  </div>
+{% endblock %}

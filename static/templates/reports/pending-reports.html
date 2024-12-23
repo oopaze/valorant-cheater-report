@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Denúncias pendentes</title>
+  <link rel="stylesheet" href="{% static 'css/pending-reports.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1>Revisar Denúncias</h1>
+    {% for report in reports %}
+      {% include 'components/report.html' with report=report with_buttons=True %}
+    {% endfor %}
+  </div>
+{% endblock %}
+
+
+
+{% block scripts %}
+  {% include 'components/messages.html' %}
+{% endblock %}

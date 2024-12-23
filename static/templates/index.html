@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report a Cheating Streamer</title>
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="glow">Valorant Cheater Report</h1>
+
+    <form action="" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <pre>{{ errors }}</pre>
+      <label for="nickname">Nickname <span class="required">*</span></label>
+      <input type="text" value="{{ values.nickname }}" id="nickname" name="nickname" placeholder="Player123" required>
+      {% if errors.nickname %}<span class="errors">{{ errors.nickname }}</span>{% endif %}
+      
+
+      <label for="evidence_video">Carregar Vídeo de Evidência <span class="required">*</span></label>
+      <input type="file" value="{{ files.evidence_video }}" id="evidence_video" name="evidence_video" accept="video/*" required>
+      <p class="instructions">Apenas arquivos de vídeo são aceitos (ex.: .mp4, .mov).</p>
+      {% if errors.evidence_video %}<span class="errors">{{ errors.evidence_video }}</span>{% endif %}
+
+
+      <label for="description">Descrição</label>
+      <textarea id="description" name="description" class="descricao-textarea" placeholder="Digite a descrição aqui...">{{ values.description }}</textarea>
+      <p class="instructions">
+        Inclua detalhes como o momento da trapaça, o comportamento suspeito e qualquer outra informação relevante que possa ajudar na análise.
+      </p>
+      {% if errors.description %}<span class="errors">{{ errors.description }}</span>{% endif %}
+
+
+      <hr class="sub_section__divisor" />
+
+      <h2 class="sub_section__title">Informações do Streamer</h2>
+      <p class="sub_section__description">
+        Você pode fornecer o @ do jogador suspeito de trapaça e a plataforma em que ele está jogando. Isso ajudará a identificar e rastrear o jogador, além de possibilitar a análise mais precisa da denúncia.
+      </p>
+      <div class="sub_section">
+        <label for="streamer_handle">Username da plataforma</label>
+        <input type="text" id="streamer_handle" value="{{ values.streamer_handle }}" name="streamer_handle" placeholder="@example">
+        {% if errors.streamer_handle %}<span class="errors">{{ errors.streamer_handle }}</span>{% endif %}
+        
+        <label for="streamer-platform">Plataforma</label>
+        <select id="platform" name="platform">
+          <option value="" disabled {% if not values.platform %}selected{% endif %}>Selecione uma plataforma</option>
+          <option value="twitch" {% if values.platform == 'twitch' %}selected{% endif %}>Twitch</option>
+          <option value="youtube"{% if values.platform == 'youtube' %}selected{% endif %}>YouTube</option>
+          <option value="tiktok"{% if values.platform == 'tiktok' %}selected{% endif %}>TikTok</option>
+          <option value="facebook"{% if values.platform == 'facebook' %}selected{% endif %}>Facebook Gaming</option>
+        </select>
+        {% if errors.platform %}<span class="errors">{{ errors.platform }}</span>{% endif %}
+      </div>
+
+      <hr class="sub_section__divisor" />
+
+      <h2 class="sub_section__title">Informações do Cheat</h2>
+      <p class="sub_section__description">
+        Se o streamer tiver um Discord, forneça o link para facilitar a análise. O Discord é frequentemente utilizado por streamers para vender cheats, o que torna essa informação crucial para a investigação.
+      </p>
+      <div class="sub_section">
+        <label for="discord">Discord</label>
+        <input value="{{ values.discord }}" type="link" id="discord" name="discord" placeholder="discord.gg/compre-cheat">
+        {% if errors.discord %}<span class="errors">{{ errors.discord }}</span>{% endif %}
+      </div>
+      
+
+      <button type="submit" class="submit-btn">Fazer Denuncia</button>
+    </form>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+  {% include 'components/messages.html' %}
+{% endblock %}

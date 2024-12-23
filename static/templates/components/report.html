@@ -1,0 +1,42 @@
+
+<div class="report">
+  <div class="report-info">
+    <a class="report__link" href="/denuncia/{{ report.id }}/">Denúncia #{{ report.id }}</a>
+    <h4 class="subsection__title">Informações do Jogador</h4>
+    <div class="subsection">
+      <p><strong>Nickname no Valorant:</strong> {{ report.nickname }}</p>
+      <p><strong>Descrição:</strong> {{ report.description }}</p>
+    </div>
+
+    <h4 class="subsection__title">Informações do Streamer</h4>
+    <div class="subsection">
+      <p><strong>Plataforma:</strong> {{ report.platform }}</p>
+      <p><strong>Nome do usuário:</strong> {{ report.streamer_handle }}</p>
+    </div>
+
+    <h4 class="subsection__title">Informações do Cheat</h4>
+    <div class="subsection">
+      <p><strong>Discord:</strong> <a href="{{ report.discord }}" target="_blank">{{ report.discord }}</a></p>
+    </div>
+  </div>
+
+  <div class="video-preview">
+    <video controls>
+      <source src="{{ report.evidence_video.url }}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    {% if with_buttons %}
+    <div class="buttons">
+      <form action="/denuncia/aprovar/{{ report.id }}/" method="post">
+        {% csrf_token %}
+        <button class="approve-btn" type="submit">Approve</button>
+      </form>
+      <form action="/denuncia/rejeitar/{{ report.id }}/" method="post">
+        {% csrf_token %}
+        <button class="reject-btn">Reject</button>
+      </form>
+    </div>
+    {% endif %}
+  </div>
+</div>

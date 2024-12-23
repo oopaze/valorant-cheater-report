@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="pt-br">
+  <head>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    
+    {% block head %} {% endblock %}
+  </head>
+  <body>
+    {% block content %} {% endblock %}
+
+
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/toastr.min.css' %}">
+    <script type="text/javascript" src="{% static 'js/toastr.min.js' %}"></script> 
+    <script>
+      console.log("something")
+      toastr.options = {
+        "closeButton": true,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": true,
+        "positionClass": "toast-top-right",
+        "preventDuplicates": true,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+      }
+    </script> 
+    {% block scripts %} {% endblock %}
+  </body>
+</html>

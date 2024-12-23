@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  <title>Próximos Passos</title>
+  <style>
+    body {
+      font-family: Montserrat, Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #1e1e22;
+      color: #f4f4f9;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #2c2c34;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      text-align: center;
+      color: #e74c3c;
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+
+    .steps {
+      margin: 20px 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .steps li {
+      background: #1e1e22;
+      border-left: 5px solid #e74c3c;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+
+    .steps li span {
+      font-weight: bold;
+      color: #e74c3c;
+    }
+
+    .standby {
+      font-style: italic;
+      color: #aaa;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1>O Que Acontece Depois de Sua Denúncia?</h1>
+    <p>Obrigado por ajudar a manter a comunidade de Valorant mais justa e limpa! Aqui estão os próximos passos que seguimos após receber sua denúncia:</p>
+
+    <ul class="steps">
+      <li>
+        <span>1. Revisão Manual:</span> Sua denúncia será analisada por nossa equipe para garantir que todas as informações e evidências estejam completas.
+      </li>
+      <li>
+        <span>2. Aprovação:</span> Caso a denúncia seja aprovada, nosso sistema começará a enviar relatórios automaticamente para a Riot Games.
+      </li>
+      <li>
+        <span>3. Envio de Relatórios:</span> Durante os próximos 7 dias, nosso bot enviará dois e-mails por dia à Riot denunciando o jogador suspeito: um pela manhã e outro à tarde.
+      </li>
+      <li>
+        <span>4. Status Stand By:</span> Após 7 dias de tentativas, colocaremos sua denúncia em modo stand by. Você poderá entrar em contato se desejar reativar o processo ou adicionar novas informações.
+        <p class="standby">Nota: Durante o período de stand by, a denúncia ficará arquivada para futuras análises, caso necessário.</p>
+      </li>
+    </ul>
+
+    <p>Nosso objetivo é tornar o processo o mais eficiente possível. Contamos com sua colaboração para fornecer informações detalhadas e completas. Obrigado por fazer sua parte!</p>
+  </div>
+{% endblock %}

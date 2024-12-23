@@ -1,0 +1,166 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0f1923;
+  color: #ffffff;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.container {
+  width: 100%;
+  max-width: 60%;
+  min-width: 300px;
+
+  padding: 30px;
+  background: linear-gradient(145deg, #2c2c34, #19191d);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  border: 1px solid #e74c3c;
+  border-radius: 12px;
+
+  margin-top: 50px;
+}
+
+h1 {
+  text-align: center;
+  color: #ff4655;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.report {
+  border: 1px solid #2c3e50;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 20px 0;
+  background-color: #22303c;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.report-info {
+  flex: 1 1 50%;
+  padding-right: 10px;
+}
+
+.report .report__link {
+  margin: 0;
+  font-size: 24px;
+  color: #ff4655;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  margin-bottom: 16px;
+}
+
+.report .report__link:hover {
+  text-decoration: underline;
+}
+
+.report p {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.video-preview {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.video-preview video {
+  width: 100%;
+  max-width: 300px;
+  max-height: 300px;
+  border: 2px solid #ff4655;
+  border-radius: 8px;
+  background-color: #000;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+
+  width: 100%;
+}
+
+.approve-btn,
+.reject-btn {
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.approve-btn {
+  background-color: #17e5a6;
+  color: #0f1923;
+}
+
+.approve-btn:hover {
+  background-color: #13c291;
+}
+
+.reject-btn {
+  background-color: #ff4655;
+  color: #0f1923;
+}
+
+.reject-btn:hover {
+  background-color: #d13a47;
+}
+
+a {
+  color: #17e5a6;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.subsection {
+  padding: 10px 8px 0;
+}
+
+.subsection__title {
+  font-size: 16px;
+  color: #ff4655;
+
+  margin: 0;
+  margin-top: 16px;
+}
+
+.subsection p {
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #e74c3c;
+  color: #f4f4f9;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.3s;
+}

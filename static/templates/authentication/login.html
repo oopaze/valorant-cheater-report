@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="glow">Login</h1>
+
+    <form action="" method="post">
+      {% csrf_token %}
+      <pre>{{ errors }}</pre>
+
+      <label for="password">Senha <span class="required">*</span></label>
+      <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+      {% if errors.password %}<span class="errors">{{ errors.password }}</span>{% endif %}
+
+      <button type="submit" class="submit-btn">Entrar</button>
+    </form>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+  {% include 'components/messages.html' %}
+{% endblock %}

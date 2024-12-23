@@ -1,0 +1,204 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #1a1a1d;
+  color: #f4f4f9;
+}
+
+.container {
+  width: 100%;
+  max-width: 650px;
+  min-width: 300px;
+
+  padding: 30px;
+  background: linear-gradient(145deg, #2c2c34, #19191d);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  border: 1px solid #e74c3c;
+  border-radius: 12px;
+
+  margin: 50px;
+}
+
+h1 {
+  text-align: center;
+  color: #e74c3c;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #f4f4f9;
+}
+
+input[type="text"],
+input[type="file"],
+input[type="link"],
+input[type="password"] {
+  padding: 12px;
+  border: 1px solid #444;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: #1e1e22;
+  color: #f4f4f9;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="file"]:focus,
+input[type="link"]:focus,
+input[type="password"]:focus {
+  border-color: #e74c3c;
+}
+
+input[type="file"] {
+  padding: 5px;
+}
+
+.descricao-textarea {
+  width: 100%;
+  height: 150px;
+  padding: 15px;
+  background-color: #1b1e21; /* Fundo do textarea */
+  border: 2px solid #444c56; /* Cor das bordas */
+  border-radius: 8px;
+  font-size: 16px;
+  color: #ddd; /* Texto claro */
+  font-family: 'Arial', sans-serif;
+  resize: vertical;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.descricao-textarea::placeholder {
+  color: #777; /* Placeholder com cor suave */
+}
+
+.descricao-textarea:focus {
+  border-color: #ff4655; /* Cor de foco do campo */
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 70, 85, 0.7); /* Efeito de brilho */
+}
+
+.submit-btn {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #e74c3c;
+  color: #f4f4f9;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #c0392b;
+}
+
+select {
+  padding: 12px;
+  border: 1px solid #444;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: #1e1e22;
+  color: #f4f4f9;
+  outline: none;
+  transition: border-color 0.3s, background-color 0.3s;
+  appearance: none; /* Remove o estilo padrão do select */
+}
+
+select:focus {
+  border-color: #e74c3c;
+}
+
+select option {
+  background-color: #1e1e22;
+  color: #f4f4f9;
+}
+
+select:disabled {
+  background-color: #2c2c34;
+  color: #777;
+}
+
+.instructions {
+  font-size: 14px;
+  color: #aaa;
+  margin-top: 5px;
+}
+
+.required {
+  color: #e74c3c;
+}
+
+.sub_section {
+  padding-left: 12px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.sub_section__title {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 4px;
+
+  color: #e74c3c;
+  text-transform: uppercase;
+}
+
+.sub_section__description {
+  line-height: 1.5;
+  font-weight: 300;
+  font-size: 12px;
+  text-align: justify;
+
+  margin-bottom: 0;  
+}
+
+hr.sub_section__divisor {
+  height: 3px;
+  background-color: #444;
+  border: none;
+
+  margin: 20px 0;
+
+  display: block;
+}
+
+@media (max-width: 500px) {
+  .container {
+    max-width: 80%;
+    padding: 20px;
+
+    margin: 8px;
+  }
+}
+
+.input_error {
+  color: #e74c3c;
+}

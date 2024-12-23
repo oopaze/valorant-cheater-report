@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Denúncias</title>
+  <link rel="stylesheet" href="{% static 'css/pending-reports.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1>Denúncias</h1>
+    {% for report in reports %}
+      {% include 'components/report.html' with report=report with_buttons=False %}
+    {% endfor %}
+
+    <button class="btn" onclick="makeNewReport()">Fazer uma nova denúncia</button>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    const makeNewReport = () => {
+      window.location.href = '/';
+    }
+  </script>
+{% endblock %}
